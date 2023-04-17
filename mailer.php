@@ -37,7 +37,7 @@ if(isset($_POST["send"])){
     $mail->SMTPSecure = "tls";
     $mail->Port = 587;
 
-    $mail->setFrom("contact@romecitagardenresort@gmail.com","RomeCita Garden Resort");
+    $mail->setFrom("contact@romecitagardenresort.online","RomeCita Garden Resort");
 
     $mail->addAddress($email); // change to my email
     $mail->isHTML(true);
