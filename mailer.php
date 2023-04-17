@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
 if(isset($_POST["send"])){
     $email = $_POST["email"];
@@ -31,11 +31,11 @@ if(isset($_POST["send"])){
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = "smtp.hostinger.com";
-    $mail->SMTPAuth = 'true';
+    $mail->SMTPAuth = "true";
     $mail->Username = "contact@romecitagardenresort.online";
     $mail->Password = "Lance@15";
     $mail->SMTPSecure = "tls";
-    $mail->Port = '587';
+    $mail->Port = "587";
 
     $mail->setFrom("contact@romecitagardenresort.online","RomeCita Garden Resort");
 
