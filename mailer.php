@@ -31,11 +31,11 @@ if(isset($_POST["send"])){
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = "smtp.hostinger.com";
-    $mail->SMTPAuth = true;
+    $mail->SMTPAuth = 'true';
     $mail->Username = "contact@romecitagardenresort.online";
     $mail->Password = "Lance@15";
     $mail->SMTPSecure = "tls";
-    $mail->Port = 587;
+    $mail->Port = '587';
 
     $mail->setFrom("contact@romecitagardenresort.online","RomeCita Garden Resort");
 
