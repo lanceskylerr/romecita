@@ -46,6 +46,6 @@ if(isset($_POST["send"])){
     $mail->Body = $msg;
 
     $mail->send();
-    header('location:index.html');
+    header('location:index.php');
 }
 ?>

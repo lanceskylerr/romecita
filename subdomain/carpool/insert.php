@@ -1,61 +1,42 @@
 <?php
+// Check if the form has been submitted
 if (isset($_POST['submit'])) {
-    if (isset($_POST['username']) && isset($_POST['password']) &&
-        isset($_POST['email']) &&
-         isset($_POST['phone'])) {
-        
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
-        $phoneCode = $_POST['phoneCode'];
-        $phone = $_POST['phone'];
-        $host = "localhost";
-        $dbUsername = "root";
-        $dbPassword = "";
-        $dbName = "test";
+ 
 
-        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+    // Connect to the database
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "carpooldtbs";
 
-        if ($conn->connect_error) {
-            die('Could not connect to the database.');
-        }
-        else {
-            $Select = "SELECT email FROM register WHERE email = ? LIMIT 1";
-            $Insert = "INSERT INTO register(username, password, email, phone) values(?, ?, ?, ?, ?, ?)";
+    $conn = mysqli_connect($host, $username, $password, $database);
 
-            $stmt = $conn->prepare($Select);
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $stmt->bind_result($resultEmail);
-            $stmt->store_result();
-            $stmt->fetch();
-            $rnum = $stmt->num_rows;
-
-            if ($rnum == 0) {
-                $stmt->close();
-
-                $stmt = $conn->prepare($Insert);
-                $stmt->bind_param("ssssii",$username, $password, $email, $phone);
-                if ($stmt->execute()) {
-                    echo "New record inserted sucessfully.";
-                }
-                else {
-                    echo $stmt->error;
-                }
-            }
-            else {
-                echo "Someone already registered using this email.";
-            }
-            $stmt->close();
-            $conn->close();
-        }
+    // Check if the connection was successful
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     }
-    else {
-        echo "All field are required.";
-        die();
+  
+  $fname = $_POST['firstname'];
+  $mname = $_POST['middlename'];
+  $lname = $_POST['lastname'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $cn = $_POST['phone'];
+  $address = $_POST['address'];
+
+
+
+    // Insert the user's information into the database
+    $sql = "INSERT INTO userstbl (user_role, user_firstname, user_midname, user_lastname, user_contactnum, user_address, user_email, user_password) VALUES ('Passenger','$fname', '$mname', '$lname', '$cn', '$address', '$email', '$password')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . mysqli_error($conn);
     }
-}
-else {
-    echo "Submit button is not set";
+
+    // Close the database connection
+    mysqli_close($conn);
+  header("Location: ./index.php");
 }
 ?>
