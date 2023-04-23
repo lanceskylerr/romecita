@@ -35,6 +35,46 @@
 			background-position: center;
             padding-top: 50px; /* add some space on top */
 		}
+    .back-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 10px; 
+            width: 60px;
+            height:42px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 20px;
+            z-index: 1;
+            position: absolute;
+  top: 100%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+        }
+        
+        .back-button:hover {
+            background-color: #0069d9;
+            z-index: inherit;
+            position: absolute;
+ 
+        }
+        
+        .back-button a {
+            color: #fff;
+            text-decoration: none;
+            z-index: inherit;
+            position: absolute;
+
+        }
+        
+        .back-button a:hover {
+            text-decoration: underline;
+            z-index: inherit;
+            position: absolute;
+ 
+        }
 
 		/* media query for smaller screens */
 		@media screen and (max-width: 480px) {
@@ -47,14 +87,14 @@
 			.img-container img {
 				margin: 5px 0;
 			}
+
+      
 		}
 	</style>
 </head>
 <body>
 <header>
-	<?php 
-        include 'navigation.php';
-        ?>
+	
 <div class="container mt-3">
 	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
   <div class="carousel-indicators">
@@ -111,6 +151,8 @@
   </button>
 </div>
 </div>
-
+<div class="back-button">
+                <a href="index.php" onclick="history.back()">Back</a>
+            </div>
 </body>
 </html>
