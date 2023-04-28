@@ -32,12 +32,12 @@ if(isset($_POST["send"])){
     $mail->isSMTP();
     $mail->Host = "smtp.hostinger.com";
     $mail->SMTPAuth = "true";
-    $mail->Username = "contact@romecitagardenresort.online";
+    $mail->Username = "inquiry@romecitagardenresort.online";
     $mail->Password = "Lance@15";
     $mail->SMTPSecure = "tls";
     $mail->Port = "587";
 
-    $mail->setFrom("contact@romecitagardenresort.online","RomeCita Garden Resort");
+    $mail->setFrom("inquiry@romecitagardenresort.online","RomeCita Garden Resort");
 
     $mail->addAddress($email); // change to my email
     $mail->isHTML(true);
