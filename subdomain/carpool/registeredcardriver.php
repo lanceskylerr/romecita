@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
+
+<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>User Registration List</title>
 	<!-- Bootstrap CSS -->
@@ -50,57 +51,53 @@
 		</div>
 	</nav>
 	<div class="container mt-5">
-		<h1 class="text-center mb-4" style = "color: white">Registered Users</h1>
+		<h1 class="text-center mb-4" style = "color: white">Registered Cars</h1>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Role</th>
-					<th>First Name</th>
-					<th>Email</th>
+					<th>Maker</th>
+					<th>Model</th>
+					<th>Type</th>
+					<th>Plate no</th>
 				</tr>
 			</thead>
 			<tbody>
-				<?php
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "carpooldtbs";
-				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
+			<?php
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$dbname = "carpooldtbs";
 
-				// Check connection
-				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+
+			// Check connection
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			}
+
+			// Retrieve data
+			$sql = "SELECT * FROM cartbl";
+			$result = $conn->query($sql);
+
+			$conn->close();
+
+			if ($result->num_rows > 0) {
+				// output data of each row
+				while ($row = $result->fetch_assoc()) {
+					echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] . "</td></tr>";
 				}
-
-				// Retrieve data
-				$sql = "SELECT * FROM userstbl";
-				$result = $conn->query($sql);
-
-				$conn->close();
-
-				if ($result->num_rows > 0) {
-					// output data of each row
-					while ($row = $result->fetch_assoc()) {
-						echo "<tr><td>" . $row["user_id"] . "</td><td>" . $row["user_role"] . "</td><td>" . $row["user_firstname"] . "</td><td>" . $row["user_email"] . "</td></tr>";
-					}
-				} else {
-					echo "0 results";
-				}
-				?>
-			</tbody>
+			} else {
+				echo "0 results";
+			}
+			?>
 		</table>
-	</div>
-	<div class="btns">
+		<div class="btns">
 		<div class="col-md-4">
-			<a href="admin.php" class="btn btn-lg btn-success btn-block">Back</a>
+			<a href="driver.php" class="btn btn-lg btn-success btn-block">Back</a>
 
 		</div>
-		<!-- Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
