@@ -22,14 +22,16 @@ if (isset($_POST['uname']) && isset($_POST['pw'])) {
         $_SESSION['user_address'] = $row['user_address'];
         $_SESSION['user_email'] = $row['user_email'];
         $_SESSION['user_password'] = $row['user_password'];
+
+
         if ($_SESSION['user_role'] == 'Passenger') {
-            header("Location: passenger.php");
+            header("Location: passenger.php?user=".$row['user_id']);
             exit();
         } else if ($_SESSION['user_role'] == 'Driver') {
-            header("Location: driver.php");
+            header("Location: driver.php?user=".$row['user_id']);
             exit();
         } else if ($_SESSION['user_role'] == 'Admin') {
-            header("Location: admin.php");
+            header("Location: admin.php?user=".$row['user_id']);
             exit();
         }
 

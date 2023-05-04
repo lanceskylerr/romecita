@@ -3,25 +3,48 @@
 
 <head>
   <title>Car Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
+      background-image: linear-gradient(74.6deg, rgba(175, 235, 156, 1) 19.7%, rgba(116, 170, 75, 1) 92%);
+    }
+
+    .lead {
+      color: white;
+    }
+
+    .title {
+      color: white;
+
+    }
+
+    <style>body {
       font-family: Arial, sans-serif;
       background-color: #f2f2f2;
     }
 
     form {
-      width: 400px;
+      width: 600px;
       margin: 0 auto;
       background-color: #fff;
       padding: 20px;
       border-radius: 5px;
       box-shadow: 0px 0px 10px #ccc;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     table {
       width: 100%;
     }
-
+    .title{
+      position: absolute;
+      top: 20%;
+      left: 710px;
+    }
     td {
       padding: 5px;
     }
@@ -87,7 +110,29 @@
 </head>
 
 <body>
-  <form action="insertcar.php" method="POST">
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand" href="#">Carpool Web</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="passenger.php?user=" <?php $user_id ?>>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1 class='title'>Register Car With License</h1>
+  <form action="insertcardriver.php" method="POST">
     <table>
       <tr>
         <td>Car Maker:</td>
@@ -108,6 +153,16 @@
         </td>
       </tr>
       <tr>
+        <td>ORCR:</td>
+        <td><input type="file" accept= "/image*" name="orcr" required></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Driver's License:</td>
+        <td><input type="file"  accept= "/image*"name="driverslicense" required></td>
+      </tr>
+      <tr>
+      <tr>
 
-        <td><a href="driver.php" name="list" class="btn uppercase btn-outline-light">BACK</a></td>
-        <td><input type="submit" value="Submit" name="submitcar"></td>
+        <td><a onclick="history.back()" name="list" class="btn uppercase btn-outline-light">BACK</a></td>
+        <td><input type="submit" value="Submit" name="submitcardriver"></td>

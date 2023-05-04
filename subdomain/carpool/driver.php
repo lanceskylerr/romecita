@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+session_start();
+$id = $_SESSION['user_id'];
+include 'connect.php';
+$sql = "SELECT * FROM userstbl WHERE user_id = '$id'";
+$query = $conn->query($sql);
+$row = $query->fetch_array();
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +41,7 @@
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="passenger.php">Carpool Web</a>
+        <a class="navbar-brand" href="#">Carpool Web Driver Panel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="driver.php">Home</a>
+                <a class="nav-link" href="driver.php?user="<?php $user_id ?>>Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -53,7 +63,7 @@
 
     <!-- Welcome message and buttons -->
     <div class="container mt-5">
-        <h1 class="title">Welcome to Carpool Web, Driver!</h1>
+        <?php echo "<h1 class='title'>Welcome to Carpool Web, " . $row['user_firstname'] . "!</h1>" ?>
         <p class="lead">Select an Option</p>
         <div class="row mt-5">
             <div class="col-md-2">

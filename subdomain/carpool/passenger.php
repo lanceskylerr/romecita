@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carpool Web</title>
     <link rel="icon" type="image/x-icon" href="img_avatar2.png">
-    
+
 
 
     <!-- Bootstrap CSS -->
@@ -26,12 +26,21 @@
         }
     </style>
 </head>
+<?php
+session_start();
+$id = $_SESSION['user_id'];
+include 'connect.php';
+$sql = "SELECT * FROM userstbl WHERE user_id = '$id'";
+$query = $conn->query($sql);
+$row = $query->fetch_array();
+
+?>
 
 <body>
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="passenger.php">Carpool Web</a>
+        <a class="navbar-brand" href="#">Carpool Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,7 +48,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="passenger.php">Home</a>
+                <a class="nav-link" href="passenger.php?user="<?php $user_id ?>>Home</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -53,8 +63,8 @@
 
     <!-- Welcome message and buttons -->
     <div class="container mt-5">
-        <h1 class="title">Welcome to Carpool Web!</h1>
-        <p class="lead">Select an Option</p>
+        <?php echo "<h1 class='title'>Welcome to Carpool Web, " . $row['user_firstname'] . "!</h1>" ?>
+        <p class="lead">Select an Option </p>
         <div class="row mt-5">
             <div class="col-md-4">
                 <a href="regcar.php" class="btn btn-lg btn-success btn-block">Register my car</a>

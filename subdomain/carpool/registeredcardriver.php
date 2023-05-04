@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>User Registration List</title>
+	<title>Registered Car List</title>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-white">
-		<a class="navbar-brand" href="passenger.php">Carpool Web</a>
+		<a class="navbar-brand" href="passenger.php">Carpool Web Driver Panel</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
 			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="admin.php">Home</a>
+				<a class="nav-link" href="driver.php?user="<?php $user_id ?>>Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">About</a>
@@ -56,10 +56,13 @@
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>User ID</th>
 					<th>Maker</th>
 					<th>Model</th>
 					<th>Type</th>
 					<th>Plate no</th>
+					<th>ORCR</th>
+					<th> Driver's License</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -86,7 +89,7 @@
 			if ($result->num_rows > 0) {
 				// output data of each row
 				while ($row = $result->fetch_assoc()) {
-					echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] . "</td></tr>";
+					echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] ."</td><td>" . $row["user_id"] ."</td><td>" . $row["car_orcr"] . "</td><td>" . $row["car_license"] . "</td></tr>";
 				}
 			} else {
 				echo "0 results";
@@ -95,7 +98,7 @@
 		</table>
 		<div class="btns">
 		<div class="col-md-4">
-			<a href="driver.php" class="btn btn-lg btn-success btn-block">Back</a>
+			<a onclick="history.back()" class="btn btn-lg btn-success btn-block">Back</a>
 
 		</div>
 </body>

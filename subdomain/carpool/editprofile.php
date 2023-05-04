@@ -52,7 +52,7 @@
     </nav>
 
 
-    <h1> WAIT LANG</h1>
+  
   
 
     <!-- Bootstrap JS -->

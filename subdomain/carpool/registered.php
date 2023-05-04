@@ -94,7 +94,7 @@
 	</div>
 	<div class="btns">
 		<div class="col-md-4">
-			<a href="admin.php" class="btn btn-lg btn-success btn-block">Back</a>
+			<a onclick="history.back()" class="btn btn-lg btn-success btn-block">Back</a>
 
 		</div>
 		<!-- Bootstrap JS -->
