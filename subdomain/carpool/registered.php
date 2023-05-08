@@ -50,7 +50,7 @@
 		</div>
 	</nav>
 	<div class="container mt-5">
-		<h1 class="text-center mb-4" style = "color: white">Registered Users</h1>
+		<h1 class="text-center mb-4" style="color: white">Registered Users</h1>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -62,18 +62,19 @@
 			</thead>
 			<tbody>
 				<?php
+
 				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "carpooldtbs";
+				$username = "u235214907_lance_skyler";
+				$password = "Lance@15";
+				$database = "u235219407_lance_carpool";
 				// Create connection
 				$conn = new mysqli($servername, $username, $password, $dbname);
-
+				
 				// Check connection
 				if ($conn->connect_error) {
-					die("Connection failed: " . $conn->connect_error);
+				die("Connection failed: " . $conn->connect_error);
 				}
-
+				
 				// Retrieve data
 				$sql = "SELECT * FROM userstbl";
 				$result = $conn->query($sql);

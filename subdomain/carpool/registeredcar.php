@@ -3,7 +3,7 @@
 
 <head>
 
-<meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>User Registration List</title>
 	<!-- Bootstrap CSS -->
@@ -39,7 +39,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-				<a class="nav-link" href="admin.php?user="<?php $user_id ?>>Home</a>
+					<a class="nav-link" href="admin.php?user=" <?php $user_id ?>>Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">About</a>
@@ -51,7 +51,7 @@
 		</div>
 	</nav>
 	<div class="container mt-5">
-		<h1 class="text-center mb-4" style = "color: white">Registered Cars</h1>
+		<h1 class="text-center mb-4" style="color: white">Registered Cars</h1>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -66,41 +66,41 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$dbname = "carpooldtbs";
+				<?php
+				$servername = "localhost";
+				$username = "u235214907_lance_skyler";
+				$password = "Lance@15";
+				$database = "u235219407_lance_carpool";
 
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
+				// Create connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
 
-			// Check connection
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			}
-
-			// Retrieve data
-			$sql = "SELECT * FROM cartbl";
-			$result = $conn->query($sql);
-
-			$conn->close();
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while ($row = $result->fetch_assoc()) {
-					echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] ."</td><td>" . $row["user_id"] ."</td><td>" . $row["car_orcr"] . "</td><td>" . $row["car_license"] . "</td></tr>";
+				// Check connection
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
 				}
-			} else {
-				echo "0 results";
-			}
-			?>
+
+				// Retrieve data
+				$sql = "SELECT * FROM cartbl";
+				$result = $conn->query($sql);
+
+				$conn->close();
+
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while ($row = $result->fetch_assoc()) {
+						echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] . "</td><td>" . $row["user_id"] . "</td><td>" . $row["car_orcr"] . "</td><td>" . $row["car_license"] . "</td></tr>";
+					}
+				} else {
+					echo "0 results";
+				}
+				?>
 		</table>
 		<div class="btns">
-		<div class="col-md-4">
-			<a onclick="history.back()" class="btn btn-lg btn-success btn-block">Back</a>
+			<div class="col-md-4">
+				<a onclick="history.back()" class="btn btn-lg btn-success btn-block">Back</a>
 
-		</div>
+			</div>
 </body>
 
 </html>

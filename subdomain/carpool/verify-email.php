@@ -1,9 +1,10 @@
 <?php
 
 $servername = "localhost";
-$dbname = "carpooldtbs";
-$username = "root";
-$password = "";
+
+$username = "u235214907_lance_skyler";
+$password = "Lance@15";
+$database = "u235219407_lance_carpool";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
