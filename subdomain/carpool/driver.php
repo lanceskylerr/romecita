@@ -76,7 +76,7 @@ $row = $query->fetch_array();
                 <a href="#" class="btn btn-lg btn-success btn-block">Registration Car Status</a>
             </div>
             <div class="col-md-4">
-                <a href="#" class="btn btn-lg btn-success btn-block">Edit Profile</a>
+                <a href="editprofile.php" class="btn btn-lg btn-success btn-block">Edit Profile</a>
             </div>
         </div>
     </div>

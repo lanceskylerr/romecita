@@ -16,13 +16,12 @@ if (isset($_POST['submitcar'])) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
+
     $cmaker = $_POST['carmaker'];
     $cmodel = $_POST['carmodel'];
     $ctype = $_POST['cartype'];
     $plateno = $_POST['plateno'];
-    //   $password = $_POST['password'];
-//   $cn = $_POST['phone'];
-//   $address = $_POST['address'];
+
 
 
 
@@ -35,6 +34,7 @@ if (isset($_POST['submitcar'])) {
         echo "Error: " . mysqli_error($conn);
     }
 
+    
     // Close the database connection
     mysqli_close($conn);
     header("Location: ./passenger.php");

@@ -33,19 +33,19 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="firstName">First Name:</label>
-						<input type="text" class="form-control" name="firstname" placeholder="Enter First Name">
+						<input type="text" class="form-control" name="firstname" placeholder="Enter First Name" required>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="middleName">Middle Name:</label>
-						<input type="text" class="form-control" name="middlename" placeholder="Enter Middle Name">
+						<input type="text" class="form-control" name="middlename" placeholder="Enter Middle Name" required>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="lastName">Last Name:</label>
-						<input type="text" class="form-control" name="lastname" placeholder="Enter Last Name">
+						<input type="text" class="form-control" name="lastname" placeholder="Enter Last Name" required>
 					</div>
 				</div>
 			</div>
@@ -53,13 +53,13 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="phone">Phone No:</label>
-						<input type="text" class="form-control" name="phone" placeholder="Enter Phone No">
+						<input type="text" class="form-control" name="phone" placeholder="Enter Phone No" required>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="address">Address:</label>
-						<input type="text" class="form-control" name="address" placeholder="Enter Address">
+						<input type="text" class="form-control" name="address" placeholder="Enter Address" required>
 					</div>
 				</div>
 			</div>
@@ -67,13 +67,13 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="email">Email:</label>
-						<input type="email" class="form-control" name="email" placeholder="Enter Email">
+						<input type="email" class="form-control" name="email" placeholder="Enter Email" required>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="password">Password:</label>
-						<input type="password" class="form-control" name="password" placeholder="Enter Password">
+						<input type="password" class="form-control" name="password" placeholder="Enter Password" required>
 					</div>
 				</div>
 			</div>

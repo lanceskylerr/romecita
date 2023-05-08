@@ -1,43 +1,16 @@
 <?php
 session_start();
 require 'conn.php';
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
 function sendemail_verify($fname, $midname, $lastname, $email, $Confirmed)
 {
-    $mail = new PHPMailer(true);
-    // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-
-    $mail->Username = 'urobot22@gmail.com';
-    $mail->Password = 'rxfxvbnrewknbgoc';
-    $mail->SMTPSecure = "tls";
-    $mail->Port = 587;
-    //Recipients
-
-    $mail->setFrom('urobot22@gmail.com', 'CarpoolApp');
-    $mail->addAddress($email);
-    $mail->isHTML(true);
-    $mail->Subject = 'Email verification';
-
-    $message = "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Greetings!, <b> $fname! </b>
-                The last step for your verification is clicking this link below! Have a Great day! ♥
-                <a href='http://localhost/CarpoolApp/verify-email.php?token=$Confirmed'><br>Verifying Email Address</a>";
-    $mail->Body = $message;
-    $mail->send();
+   
     // echo 'Message has been sent';
 }
 if (isset($_POST['send'])) {
 
     //GET THE DATA FROM THE FORM
-    require 'conn.php';
+    require 'connect.php';
     $fname = $_POST['firstname'];
     $midname = $_POST['middlename'];
     $lastname = $_POST['lastname'];

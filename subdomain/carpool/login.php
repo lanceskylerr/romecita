@@ -34,7 +34,7 @@ if (isset($_POST['uname']) && isset($_POST['pw'])) {
             header("Location: admin.php?user=".$row['user_id']);
             exit();
         }
-
+        
         header("Location: index.php"); // Redirect to home page
     } else {
         // Login failed, show alert message
