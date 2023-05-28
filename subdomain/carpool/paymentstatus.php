@@ -45,7 +45,7 @@ $row = $query->fetch_array();
 
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="#">Carpool Web</a>
+        <a class="navbar-brand" href="passenger.php">Carpool Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,28 +68,32 @@ $row = $query->fetch_array();
 
     <!-- Registered Cars Status -->
     <div class="container mt-5">
-        <h2 class="title">Registered Cars Status</h2>
+        <h2 class="title">Cash In Status</h2>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
-                    <th>Car Maker</th>
-                    <th>Car Model</th>
-                    <th>Car Type</th>
-                    <th>Car Plate No</th>
-                    <th>Status</th>
+                    <th>Transaction Type</th>
+                    <th>GCash No</th>
+                    <th>Cash In Amount</th>
+                    <th>Conversion Fee</th>
+                    <th>Ticket</th>
+                    <th>Admin Confirmation</th>
+                    <th>Transaction Status</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $carSql = "SELECT * FROM cartbl WHERE user_id = '$id' AND car_confirmation = 'Approved'";
+                $carSql = "SELECT * FROM transactiontbl WHERE user_id = '$id' AND transaction_status = 'Pending' OR transaction_status = 'Failed'";
                 $carQuery = $conn->query($carSql);
                 while ($carRow = $carQuery->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $carRow['car_maker'] . "</td>";
-                    echo "<td>" . $carRow['car_model'] . "</td>";
-                    echo "<td>" . $carRow['car_type'] . "</td>";
-                    echo "<td>" . $carRow['car_plateno'] . "</td>";
-                    echo "<td>" . $carRow['car_confirmation'] . "</td>";
+                    echo "<td>" . $carRow['transaction_type'] . "</td>";
+                    echo "<td>" . $carRow['gcash_no'] . "</td>";
+                    echo "<td>" . $carRow['cico_amount'] . "</td>";
+                    echo "<td>" . $carRow['convert_fee'] . "</td>";
+                    echo "<td>" . $carRow['ticket'] . "</td>";
+                    echo "<td>" . $carRow['admin_confirmation'] . "</td>";
+                    echo "<td>" . $carRow['transaction_status'] . "</td>";
                     echo "</tr>";
                 }
                 ?>
@@ -99,7 +103,7 @@ $row = $query->fetch_array();
     <div class="container mt-5">
         <div class="row mt-5">
             <div class="col-md-3 mb-4">
-                <a href="driver.php" class="btn btn-lg btn-success btn-block">Back</a>
+                <a href="passenger.php" class="btn btn-lg btn-success btn-block">Back</a>
             </div>
         </div>
     </div>

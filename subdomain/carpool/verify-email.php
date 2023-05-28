@@ -1,10 +1,9 @@
 <?php
 
 $servername = "localhost";
-
-$username = "u235214907_lance_skyler";
-$password = "Lance@15";
-$database = "u235219407_lance_carpool";
+$dbname = "carpooldtbs";
+$username = "root";
+$password = "";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

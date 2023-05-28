@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>User Registration List</title>
@@ -12,7 +11,6 @@
 	<!-- Custom CSS -->
 	<style>
 		body {
-			/* background-color: #f8f9fa; */
 			background-image: linear-gradient(74.6deg, rgba(175, 235, 156, 1) 19.7%, rgba(116, 170, 75, 1) 92%);
 		}
 
@@ -39,7 +37,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="admin.php?user=" <?php $user_id ?>>Home</a>
+					<a class="nav-link" href="admin.php?user=<?php echo $user_id; ?>">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">About</a>
@@ -62,18 +60,19 @@
 					<th>Type</th>
 					<th>Plate no</th>
 					<th>ORCR</th>
-					<th> Driver's License</th>
+					<th>Driver's License</th>
+
 				</tr>
 			</thead>
 			<tbody>
 				<?php
 				$servername = "localhost";
-				$username = "u235214907_lance_skyler";
-				$password = "Lance@15";
-				$database = "u235219407_lance_carpool";
+				$username = "root";
+				$password = "";
+				$database = "carpooldtbs";
 
 				// Create connection
-				$conn = new mysqli($servername, $username, $password, $dbname);
+				$conn = new mysqli($servername, $username, $password, $database);
 
 				// Check connection
 				if ($conn->connect_error) {
@@ -81,26 +80,26 @@
 				}
 
 				// Retrieve data
-				$sql = "SELECT * FROM cartbl";
+				$sql = "SELECT * FROM cartbl WHERE car_confirmation = 'Approved'";
 				$result = $conn->query($sql);
-
-				$conn->close();
 
 				if ($result->num_rows > 0) {
 					// output data of each row
 					while ($row = $result->fetch_assoc()) {
-						echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] . "</td><td>" . $row["user_id"] . "</td><td>" . $row["car_orcr"] . "</td><td>" . $row["car_license"] . "</td></tr>";
+						echo "<tr><td>" . $row["car_id"] . "</td><td>" . $row["user_id"] . "</td><td>" . $row["car_maker"] . "</td><td>" . $row["car_model"] . "</td><td>" . $row["car_type"] . "</td><td>" . $row["car_plateno"] . "</td><td>" . $row["car_orcr"] . "</td><td>" . $row["car_license"] . "</td>";
+
 					}
-				} else {
-					echo "0 results";
 				}
 				?>
+			</tbody>
 		</table>
 		<div class="btns">
 			<div class="col-md-4">
 				<a onclick="history.back()" class="btn btn-lg btn-success btn-block">Back</a>
-
 			</div>
+		</div>
+	</div>
 </body>
 
 </html>
+?>

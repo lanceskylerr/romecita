@@ -4,7 +4,7 @@ require 'conn.php';
 
 function sendemail_verify($fname, $midname, $lastname, $email, $Confirmed)
 {
-   
+
     // echo 'Message has been sent';
 }
 if (isset($_POST['send'])) {

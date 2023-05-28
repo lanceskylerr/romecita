@@ -28,7 +28,7 @@
 <body>
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="passenger.php">Carpool Web</a>
+        <a class="navbar-brand" href="driver.php">Carpool Web Driver Panel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="passenger.php">Home</a>
+                    <a class="nav-link" href="driver.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -79,8 +79,8 @@
                 ?>
             </tbody>
         </table>
-        <a href='passenger.php' class="btn btn-primary">Back</a>
-        <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+        <a href='driver.php' class="btn btn-primary">Back</a>
+        <a href="driveredit_profile.php" class="btn btn-primary">Edit Profile</a>
     </div>
 
     <!-- Bootstrap JS -->

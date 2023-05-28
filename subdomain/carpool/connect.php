@@ -1,9 +1,9 @@
 <?php
 // Connect to the database
 $host = "localhost";
-$username = "u235214907_lance_skyler";
-$password = "Lance@15";
-$database = "u235219407_lance_carpool";
+$username = "root";
+$password = "";
+$database = "carpooldtbs";
 
 $conn = mysqli_connect($host, $username, $password, $database);
 

@@ -81,7 +81,7 @@ $row = $query->fetch_array();
             </thead>
             <tbody>
                 <?php
-                $carSql = "SELECT * FROM cartbl WHERE user_id = '$id' AND car_confirmation = 'Approved'";
+                $carSql = "SELECT * FROM cartbl WHERE user_id = '$id' AND car_confirmation = 'Pending' OR car_confirmation='Rejected'";
                 $carQuery = $conn->query($carSql);
                 while ($carRow = $carQuery->fetch_assoc()) {
                     echo "<tr>";

@@ -11,19 +11,19 @@ require 'phpmailer/src/SMTP.php';
 // Check if the form has been submitted
 if (isset($_POST['submit'])) {
 
-include 'connect.php';
-  // // Connect to the database
-  // $host = "localhost";
-  // $username = "root";
-  // $password = "";
-  // $database = "carpooldtbs";
 
-  // $conn = mysqli_connect($host, $username, $password, $database);
+  // Connect to the database
+  $host = "localhost";
+  $username = "root";
+  $password = "";
+  $database = "carpooldtbs";
 
-  // // Check if the connection was successful
-  // if (!$conn) {
-  //   die("Connection failed: " . mysqli_connect_error());
-  // }
+  $conn = mysqli_connect($host, $username, $password, $database);
+
+  // Check if the connection was successful
+  if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
 
   $fname = $_POST['firstname'];
   $mname = $_POST['middlename'];

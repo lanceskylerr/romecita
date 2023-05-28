@@ -1,39 +1,41 @@
 <?php
 // Check if the form has been submitted
-if (isset($_POST['submitcardriver'])) {
+session_start();
+$user_id = $_SESSION['user_id'];
+if (isset($_POST['submitcar'])) {
 
-    include 'connect.php';
+
     // Connect to the database
-    // $host = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $database = "carpooldtbs";
+    $host = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "carpooldtbs";
 
-    // $conn = mysqli_connect($host, $username, $password, $database);
+    $conn = mysqli_connect($host, $username, $password, $database);
 
-    // // Check if the connection was successful
-    // if (!$conn) {
-    //     die("Connection failed: " . mysqli_connect_error());
-    // }
+    // Check if the connection was successful
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
 
     $cmaker = $_POST['carmaker'];
     $cmodel = $_POST['carmodel'];
     $ctype = $_POST['cartype'];
     $plateno = $_POST['plateno'];
-    //   $password = $_POST['password'];
-//   $cn = $_POST['phone'];
-//   $address = $_POST['address'];
-
+    $orcr = $_POST['orcr'];
+  
 
 
     // Insert the user's information into the database
-    $sql = "INSERT INTO cartbl (car_maker, car_model, car_type, car_plateno, car_confirmation) VALUES ('$cmaker', '$cmodel', '$ctype', '$plateno', ' ')";
+    $sql = "INSERT INTO cartbl (car_maker, car_model, car_type, car_plateno, car_orcr, car_confirmation, user_id) VALUES ('$cmaker', '$cmodel', '$ctype', '$plateno','$orcr', 'Pending', '$user_id')";
 
     if (mysqli_query($conn, $sql)) {
         echo "Registration successful!";
     } else {
         echo "Error: " . mysqli_error($conn);
     }
+
 
     // Close the database connection
     mysqli_close($conn);

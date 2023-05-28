@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Registration Page</title>
 	<meta charset="utf-8">
@@ -9,37 +10,43 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
-	body {
-		background: linear-gradient(to bottom right, #b3ffb3, #99e6ff);
-	}
-	.form-group {
-		margin-bottom: 20px;
-	}
-	.btn {
-		background-color: #00cc99;
-		color: #fff;
-	}
-	.btn:hover {
-		background-color: #008066;
-		color: #fff;
-	}
+		body {
+			background: linear-gradient(to bottom right, #b3ffb3, #99e6ff);
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		.btn {
+			background-color: #00cc99;
+			color: #fff;
+		}
+
+		.btn:hover {
+			background-color: #008066;
+			color: #fff;
+		}
 	</style>
 </head>
+
 <body>
 	<div class="container mt-5">
 		<h2 class="text-center mb-4">Registration Form</h2>
-		<form action = "insert.php" method="POST">
+		<form action="insert.php" method="POST">
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="firstName">First Name:</label>
-						<input type="text" class="form-control" name="firstname" placeholder="Enter First Name" required>
+						<input type="text" class="form-control" name="firstname" placeholder="Enter First Name"
+							required>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="middleName">Middle Name:</label>
-						<input type="text" class="form-control" name="middlename" placeholder="Enter Middle Name" required>
+						<input type="text" class="form-control" name="middlename" placeholder="Enter Middle Name"
+							required>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -73,19 +80,23 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="password">Password:</label>
-						<input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+						<input type="password" class="form-control" name="password" placeholder="Enter Password"
+							required>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<button type="submit" name ="submit" class="btn btn-block">Submit</button>
+					<button type="button" class="btn btn-secondary btn-block"
+						onclick="window.location.href='index.php'">Back</button>
 				</div>
 				<div class="col-md-6">
-					<button type="button" class="btn btn-secondary btn-block" onclick="window.location.href='index.php'">Back</button>
+					<button type="submit" name="submit" class="btn btn-block">Submit</button>
 				</div>
+
 			</div>
 		</form>
 	</div>
 </body>
+
 </html>

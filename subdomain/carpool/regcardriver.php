@@ -42,8 +42,8 @@
     }
     .title{
       position: absolute;
-      top: 20%;
-      left: 710px;
+      top: 10%;
+      left: 510px;
     }
     td {
       padding: 5px;
@@ -112,7 +112,7 @@
 <body>
   <!-- Navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand" href="#">Carpool Web Driver Panel</a>
+    <a class="navbar-brand" href="#">Carpool Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -120,7 +120,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="driver.php?user=" <?php $user_id ?>>Home</a>
+          <a class="nav-link" href="passenger.php?user=" <?php $user_id ?>>Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -131,8 +131,8 @@
       </ul>
     </div>
   </nav>
-  <h1 class='title'>Register Car With License</h1>
-  <form action="insertcardriver.php" method="POST">
+  <h1 class='title'>Register Car</h1>
+  <form action="insertcar.php" method="POST">
     <table>
       <tr>
         <td>Car Maker:</td>
@@ -158,11 +158,7 @@
       </tr>
       <tr>
       <tr>
-        <td>Driver's License:</td>
-        <td><input type="file"  accept= "/image*"name="driverslicense" required></td>
-      </tr>
-      <tr>
       <tr>
 
         <td><a onclick="history.back()" name="list" class="btn uppercase btn-outline-light">BACK</a></td>
-        <td><input type="submit" value="Submit" name="submitcardriver"></td>
+        <td><input type="submit" value="Submit" name="submitcar"></td>

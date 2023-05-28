@@ -1,0 +1,56 @@
+.container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .logo {
+    font-family: 'Rock Salt', cursive;
+    margin: 0;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  
+  .header-left {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .header-right {
+    padding: 0;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+  }
+  
+  .header-right a {
+    line-height: 30px;
+    padding: 0 15px;
+  }
+  
+  .btn.uppercase {
+    text-transform: uppercase;
+    font-size: 25px; 
+    letter-spacing: 0.1em;
+  }
+  
+  .btn-outline-light {
+    color: #f8f9fa;
+    background-color: transparent;
+    border-color: #f8f9fa;
+  }
+  
+  .btn-outline-light:hover {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+  
+  .title-and-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  

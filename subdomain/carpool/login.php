@@ -7,7 +7,7 @@ if (isset($_POST['uname']) && isset($_POST['pw'])) {
     $email = $_POST['uname'];
     $password = $_POST['pw'];
 
-    $sql = "SELECT * FROM userstbl WHERE user_email = '$email' AND user_password = '$password'";
+    $sql = "SELECT * FROM userstbl WHERE user_email = '$email' AND user_password = '$password' AND user_confirmation = '1'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {
@@ -38,8 +38,8 @@ if (isset($_POST['uname']) && isset($_POST['pw'])) {
         header("Location: index.php"); // Redirect to home page
     } else {
         // Login failed, show alert message
-        echo "<script>alert('Invalid email or password.')</script>";
-        echo "<script>window.location.href='login.php';</script>";
+        echo "<script>alert('Invalid email or password / Not Yet Verified!')</script>";
+        echo "<script>window.location.href='index.php';</script>";
     }
 }
 ?>

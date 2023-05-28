@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +13,9 @@
     $sql = "SELECT * FROM userstbl WHERE user_id = '$id'";
     $query = $conn->query($sql);
     $row = $query->fetch_array();
-
     ?>
 
     <!-- Bootstrap CSS -->
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
@@ -31,13 +28,11 @@
 
         .title {
             color: white;
-
         }
     </style>
 </head>
 
 <body>
-
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="#">Carpool Web Admin Panel</a>
@@ -65,25 +60,24 @@
         <?php echo "<h1 class='title'>Welcome to Carpool Web, " . $row['user_firstname'] . "!</h1>" ?>
         <p class="lead">Select an Option</p>
         <div class="row mt-5">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="registered.php" class="btn btn-lg btn-success btn-block">Registered Users</a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="registeredcar.php" class="btn btn-lg btn-success btn-block">Registered Cars</a>
             </div>
-            <div class="col-md-4">
-                <a href="#" class="btn btn-lg btn-success btn-block">Car Approval</a>
+            <div class="col-md-3">
+                <a href="carapproval.php" class="btn btn-lg btn-success btn-block">Car Approval</a>
+            </div>
+            <div class="col-md-3">
+                <a href="paymentapproval.php" class="btn btn-lg btn-success btn-block">Payment Approval</a>
             </div>
         </div>
-
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper
-  .min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap
-  .min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>

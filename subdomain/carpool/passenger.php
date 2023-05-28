@@ -7,8 +7,6 @@
     <title>Carpool Web</title>
     <link rel="icon" type="image/x-icon" href="img_avatar2.png">
 
-
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -22,7 +20,6 @@
 
         .title {
             color: white;
-
         }
     </style>
 </head>
@@ -33,7 +30,6 @@ include 'connect.php';
 $sql = "SELECT * FROM userstbl WHERE user_id = '$id'";
 $query = $conn->query($sql);
 $row = $query->fetch_array();
-
 ?>
 
 <body>
@@ -48,8 +44,7 @@ $row = $query->fetch_array();
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <a class="nav-link" href="passenger.php?user="<?php $user_id ?>>Home</a>
-
+                    <a class="nav-link" href="passenger.php?user=<?php echo $user_id ?>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -64,26 +59,30 @@ $row = $query->fetch_array();
     <!-- Welcome message and buttons -->
     <div class="container mt-5">
         <?php echo "<h1 class='title'>Welcome to Carpool Web, " . $row['user_firstname'] . "!</h1>" ?>
-        <p class="lead">Select an Option </p>
+        <p class="lead">Select an Option</p>
         <div class="row mt-5">
-            <div class="col-md-4">
+            <div class="col-md-3 mb-4">
                 <a href="regcar.php" class="btn btn-lg btn-success btn-block">Register my car</a>
             </div>
-            <div class="col-md-4">
-                <a href="#" class="btn btn-lg btn-success btn-block">Registration Status</a>
+            <div class="col-md-3 mb-4">
+                <a href="regcarstatus.php" class="btn btn-lg btn-success btn-block">Registration Status</a>
             </div>
-            <div class="col-md-4">
-                <a href="editprofile.php" class="btn btn-lg btn-success btn-block">Edit Profile</a>
+            <div class="col-md-3 mb-4">
+                <a href="editprofile.php" class="btn btn-lg btn-success btn-block">User Profile</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="payment.php" class="btn btn-lg btn-success btn-block">Cash In</a>
+            </div>
+            <div class="col-md-3 mb-4">
+                <a href="paymentstatus.php" class="btn btn-lg btn-success btn-block">Cash In Status</a>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper
-  .min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap
-  .min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

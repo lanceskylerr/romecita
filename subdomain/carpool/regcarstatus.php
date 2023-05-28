@@ -13,19 +13,36 @@
         body {
             background-image: linear-gradient(74.6deg, rgba(175, 235, 156, 1) 19.7%, rgba(116, 170, 75, 1) 92%);
         }
-    </style>
-    <style>
-        body {
-            background-color: #f5f5f5;
+
+        .lead {
+            color: white;
         }
 
-        .container {
-            margin-top: 50px;
+        .title {
+            color: white;
+        }
+
+        .table thead tr {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        .table-bordered {
+            border: 1px solid black;
         }
     </style>
 </head>
+<?php
+session_start();
+$id = $_SESSION['user_id'];
+include 'connect.php';
+$sql = "SELECT * FROM userstbl WHERE user_id = '$id'";
+$query = $conn->query($sql);
+$row = $query->fetch_array();
+?>
 
 <body>
+
     <!-- Navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="passenger.php">Carpool Web</a>
@@ -36,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="passenger.php">Home</a>
+                    <a class="nav-link" href="passenger.php?user=<?php echo $user_id ?>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
@@ -48,39 +65,43 @@
         </div>
     </nav>
 
-    <!-- Edit Profile -->
+
+    <!-- Registered Cars Status -->
     <div class="container mt-5">
-        <h2>User Profile</h2>
-        <table class="table mt-3">
+        <h2 class="title">Registered Cars Status</h2>
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Car Maker</th>
+                    <th>Car Model</th>
+                    <th>Car Type</th>
+                    <th>Car Plate No</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
             <tbody>
                 <?php
-                session_start();
-                $id = $_SESSION['user_id'];
-                include 'connect.php';
-                $sql = "SELECT user_firstname, user_midname, user_lastname, user_contactnum, user_email, user_password FROM userstbl WHERE user_id = '$id'";
-                $query = $conn->query($sql);
-                $row = $query->fetch_assoc();
-                echo "<tr>";
-                echo "<th>Full Name</th>";
-                echo "<td>" . $row['user_firstname'] . " " . $row['user_midname'] . " " . $row['user_lastname'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                echo "<th>Contact Number</th>";
-                echo "<td>" . $row['user_contactnum'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                echo "<th>Email</th>";
-                echo "<td>" . $row['user_email'] . "</td>";
-                echo "</tr>";
-                echo "<tr>";
-                echo "<th>Password</th>";
-                echo "<td>" . $row['user_password'] . "</td>";
-                echo "</tr>";
+                $carSql = "SELECT * FROM cartbl WHERE user_id = '$id'";
+                $carQuery = $conn->query($carSql);
+                while ($carRow = $carQuery->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>" . $carRow['car_maker'] . "</td>";
+                    echo "<td>" . $carRow['car_model'] . "</td>";
+                    echo "<td>" . $carRow['car_type'] . "</td>";
+                    echo "<td>" . $carRow['car_plateno'] . "</td>";
+                    echo "<td>" . $carRow['car_confirmation'] . "</td>";
+                    echo "</tr>";
+                }
                 ?>
             </tbody>
         </table>
-        <a href='passenger.php' class="btn btn-primary">Back</a>
-        <a href="edit_profile.php" class="btn btn-primary">Edit Profile</a>
+    </div>
+    <div class="container mt-5">
+        <div class="row mt-5">
+            <div class="col-md-3 mb-4">
+                <a href="passenger.php" class="btn btn-lg btn-success btn-block">Back</a>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->

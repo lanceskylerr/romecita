@@ -42,8 +42,8 @@
     }
     .title{
       position: absolute;
-      top: 20%;
-      left: 710px;
+      top: 10%;
+      left: 510px;
     }
     td {
       padding: 5px;
@@ -112,7 +112,7 @@
 <body>
   <!-- Navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a class="navbar-brand" href="#">Carpool Web</a>
+    <a class="navbar-brand" href="passenger.php">Carpool Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -132,7 +132,7 @@
     </div>
   </nav>
   <h1 class='title'>Register Car With License</h1>
-  <form action="insertcardriver.php" method="POST">
+  <form action="insertcar.php" method="POST">
     <table>
       <tr>
         <td>Car Maker:</td>
@@ -165,4 +165,4 @@
       <tr>
 
         <td><a onclick="history.back()" name="list" class="btn uppercase btn-outline-light">BACK</a></td>
-        <td><input type="submit" value="Submit" name="submitcardriver"></td>
+        <td><input type="submit" value="Submit" name="submitcar"></td>
