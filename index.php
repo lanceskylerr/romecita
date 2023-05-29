@@ -8,21 +8,19 @@
 </head>
 <body>
     <header>
-        <!-- <div class="container">
+        <div class="container">
             <div class="header-left">
                 <h1 class="logo">RomeCita</h1>
             </div>
             <div class="header-right">
-                <a href="gallery.php" class="btn uppercase btn-outline-light">Gallery</a>
-                <a href="villas.php" class="btn uppercase btn-outline-light">VILLAS</a>
-                <a href="cottages.php" class="btn uppercase btn-outline-light">COTTAGES</a>
-                <a href="hall.php" class="btn uppercase btn-outline-light">FUNCTION HALL</a>
+                    <!-- <a href="gallery.php" class="btn uppercase btn-outline-light">Gallery</a>
+                    <a href="villas.php" class="btn uppercase btn-outline-light">VILLAS</a>
+                    <a href="cottages.php" class="btn uppercase btn-outline-light">COTTAGES</a>
+                    <a href="hall.php" class="btn uppercase btn-outline-light">FUNCTION HALL</a> -->
                 <a href="feedback.php" class="btn uppercase btn-outline-light">FEEDBACK</a>
             </div>
-        </div> -->
-        <?php 
-        include 'navigation.php';
-        ?>
+        </div>
+       
     </header>
 
     <div class="image">
@@ -33,8 +31,8 @@
                     <p>A perfect place to relax and enjoy</p>
                     <p>with your friends and family!</p>
                 </div>
-                <p><a href="gallery.php" class="btn uppercase btn-primary">Explore the Beauty</a>
-                <a href="rooms.php" class="btn uppercase btn-outline-light">Check Rooms Availability</a></p>
+                <p><a href="nav2.php" class="btn uppercase btn-primary">Explore the Beauty</a>
+                <a href="bk.php" class="btn uppercase btn-outline-light">Check Rooms Availability</a></p>
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <!-- <div class="container">
+        <div class="container">
             <div class="header-left">
                 <h1 class="logo">RomeCita</h1>
             </div>
@@ -21,10 +21,8 @@
                 <a href="hall.php" class="btn uppercase btn-outline-light">FUNCTION HALL</a>
                 <a href="feedback.php" class="btn uppercase btn-outline-light">FEEDBACK</a>
             </div>
-        </div> -->
-        <?php 
-        include 'navigation.php';
-        ?>
+        </div>
+        
     </header>
 
     <div class="image">
@@ -38,7 +36,6 @@
                        
                         <a href="#" class="btn uppercase btn-outline-light">Bahay Kubo</a>
                     </p>
-
                     <p>
                         
                         <a href="#" class="btn uppercase btn-outline-light">Kubo With Rooms</a>
