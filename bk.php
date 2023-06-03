@@ -10,6 +10,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <style>
+
+
+.items span {
+        padding: 15px 30px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #abcda1;
+        border-radius: 50px;
+        border: 2px solid #abcda1;
+        transition: all 0.3s ease;
+        background-color: #fff;
+    }
+
+    .items span.active,
+    .items span:hover {
+        color: #fff;
+        background: #F7E7CE;
+        border-color: #F7E7CE;
+    }
+
+
+    body {
+        background-image: url("images/resort.jpg");
+        background-size: active;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    ::selection {
+        color: #fff;
+        background: #007bff;
+    }
+
+    body {
+        padding: 10px;
+        backdrop-filter: blur(5px);
+        /* Add blur effect to the body background */
+    }
+
+    .wrapper {
+        margin: 100px auto;
+        max-width: 1100px;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Add a semi-transparent background color to the wrapper */
+    }
+
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
     * {
